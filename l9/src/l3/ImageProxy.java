@@ -28,6 +28,11 @@ public class ImageProxy implements Element{
 			v.visit(this);
 			
 		}
+		@Override
+		public void setNewValue(String newValue) {
+			// TODO Auto-generated method stub
+			
+		}
 			
 		
 }

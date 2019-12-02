@@ -1,9 +1,15 @@
 package l3;
 
+import java.util.ArrayList;
+
 //import java.util.concurrent.TimeUnit;
 
-public class Image implements Element{
+public class Image implements Element,Observable{
 	public String Nume;
+	
+	public String value;
+	public  String oldValue;
+	ArrayList<Observer> o1 = new ArrayList<Observer>();
 	
 	public Image() {}
 	public Image(String N) {
@@ -32,6 +38,29 @@ public class Image implements Element{
 	@Override
 	public void accept(Visitor v) {
 		v.visit(this);
+		
+	}
+	@Override
+	public void setNewValue(String newValue) {
+		this.oldValue = this.Nume;
+		this.Nume=newValue;
+		notifyObserver();
+	}
+	@Override
+	public void addObserver(Observer o) {
+		o1.add(o);
+		
+	}
+	@Override
+	public void removeObserver(Observer o) {
+		o1.remove(o);
+		
+	}
+	@Override
+	public void notifyObserver() {
+		for(Observer a : o1) {
+			a.update(oldValue,Nume);
+		}
 		
 	}
 	

@@ -25,7 +25,11 @@ public class Book {
 		a1.add(author);
 		
 	}
-	
+	public void Accept(Visitor visitor){
+        for(Element element: e1){
+            element.accept(visitor);
+        }
+    }
 	
 	public void addContent(Element Element) {
 		e1.add(Element);
