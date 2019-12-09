@@ -9,4 +9,10 @@ public class StatisticCommand implements Command{
 
         DocumentManager.GetInstance().GetBook().Accept(statistics);
     }
+
+	@Override
+	public void unExecute() {
+		// TODO Auto-generated method stub
+		
+	}
 }

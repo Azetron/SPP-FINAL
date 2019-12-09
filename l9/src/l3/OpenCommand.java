@@ -16,4 +16,10 @@ public class OpenCommand implements Command{
         DocumentManager.GetInstance().SetBook(newBook);
         newBook.print();
     }
+
+	@Override
+	public void unExecute() {
+		// TODO Auto-generated method stub
+		
+	}
 }
